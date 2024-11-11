@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozvánka na oslavu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 90%;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .countdown {
+            font-size: 2em;
+            color: #e74c3c;
+            word-wrap: break-word;
+        }
+        .emoji {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pozvánka na oslavu 🎉</h1>
+        <p>Srdečně vás zveme na oslavu dvou výjimečných osob:</p>
+        <p class="emoji">🎂 <strong>Martin, 37 let</strong></p>
+        <p class="emoji">🎈 <strong>Karolína, 19 let</strong></p>
+        <p>Oslava se koná 16. listopadu od 14:00 v Jeřmanicích.</p>
+        <div class="countdown" id="countdown"></div>
+        <p class="emoji">🥳🎊🎁</p>
+    </div>
+
+    <script>
+        // Nastavení data a času oslavy
+        var countDownDate = new Date("Nov 16, 2024 14:00:00").getTime();
+
+        // Aktualizace odpočtu každou sekundu
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Oslava začala!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

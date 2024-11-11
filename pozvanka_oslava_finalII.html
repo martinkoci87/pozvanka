@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozvánka na oslavu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        .countdown {
+            font-size: 2em;
+            color: #e74c3c;
+        }
+        .emoji {
+            font-size: 2em;
+        }
+        .gif {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pozvánka na oslavu 🎉</h1>
+        <p>Srdečně vás zveme na oslavu dvou výjimečných osob:</p>
+        <p class="emoji">🎂 <strong>Martin, 37 let</strong></p>
+        <p class="emoji">🎈 <strong>Karolína, 19 let</strong></p>
+        <p>Oslava se koná 16. listopadu od 14:00 v Jeřmanicích.</p>
+        <div class="countdown" id="countdown"></div>
+        <p class="emoji">🥳🎊🎁</p>
+        <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Celebration GIF" class="gif">
+    </div>
+
+    <script>
+        // Nastavení data a času oslavy
+        var countDownDate = new Date("Nov 16, 2024 14:00:00").getTime();
+
+        // Aktualizace odpočtu každou sekundu
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance /
